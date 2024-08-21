@@ -1,0 +1,275 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>主题内置：外挂标签 | Hsyac</title><noscript>开启JavaScript才能访问本站哦~</noscript><link rel="icon" href="/img/pwa/favicon.ico"><!-- index.css--><link rel="stylesheet" href="/css/index.css?v=2.0.10"><!-- inject head--><link rel="canonical" href="http://example.com/posts/1d2efe27.html"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"><!-- aplayer--><link rel="stylesheet" href="https://cdn.staticfile.net/aplayer/1.10.1/APlayer.min.css"><!-- swiper--><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css"><!-- fancybox ui--><!-- katex--><!-- Open Graph--><meta name="description" content="标签页语法参数预览源代码12345&amp;#123;% tabs [唯一名称] [索引] %&amp;#125;&amp;lt;!-- tab [标签标题] [@图标] --&amp;gt;任意内容（支持内联标签）。&amp;lt;!-- endtab --&amp;gt;&amp;#123;% endtabs %&amp;#125; [唯一名称]：每个标签块"><!-- pwa--><meta name="apple-mobile-web-app-capable" content="Hsyac"><meta name="theme-color" content="var(--efu-main)"><meta name="apple-mobile-web-app-status-bar-style" content="var(--efu-main)"><link rel="bookmark" href="/img/pwa/favicon.ico"><link rel="apple-touch-icon" href="/img/pwa/favicon.ico" sizes="180x180"><script>console.log(' %c Solitude %c ' + '2.0.10' + ' %c https://github.com/everfu/hexo-theme-solitude',
+    'background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
+    'background:#ff9a9a ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
+    'background:unset ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff')
+</script><script>let mdate = "";
+mdate = (mdate.split(","));
+let ndate = new Date();
+for (let i of mdate) {
+    if (i === (ndate.getMonth()+1) + "-" + (ndate.getDate())) {
+        document.documentElement.classList.add('memorial');
+    }
+}
+</script><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css" /><script>(()=>{
+        const saveToLocal = {
+            set: function setWithExpiry(key, value, ttl) {
+                if (ttl === 0)
+                    return
+                const now = new Date()
+                const expiryDay = ttl * 86400000
+                const item = {
+                    value: value,
+                    expiry: now.getTime() + expiryDay
+                }
+                localStorage.setItem(key, JSON.stringify(item))
+            },
+            get: function getWithExpiry(key) {
+                const itemStr = localStorage.getItem(key)
+
+                if (!itemStr) {
+                    return undefined
+                }
+                const item = JSON.parse(itemStr)
+                const now = new Date()
+
+                if (now.getTime() > item.expiry) {
+                    localStorage.removeItem(key)
+                    return undefined
+                }
+                return item.value
+            }
+        };
+        window.utils = {
+            saveToLocal: saveToLocal,
+            getCSS: (url, id = false) => new Promise((resolve, reject) => {
+              const link = document.createElement('link')
+              link.rel = 'stylesheet'
+              link.href = url
+              if (id) link.id = id
+              link.onerror = reject
+              link.onload = link.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                link.onload = link.onreadystatechange = null
+                resolve()
+              }
+              document.head.appendChild(link)
+            }),
+            getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+              const script = document.createElement('script')
+              script.src = url
+              script.async = true
+              script.onerror = reject
+              script.onload = script.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                script.onload = script.onreadystatechange = null
+                resolve()
+              }
+
+              Object.keys(attr).forEach(key => {
+                script.setAttribute(key, attr[key])
+              })
+
+              document.head.appendChild(script)
+            }),
+            addGlobalFn: (key, fn, name = false, parent = window) => {
+                const globalFn = parent.globalFn || {}
+                const keyObj = globalFn[key] || {}
+
+                if (name && keyObj[name]) return
+
+                name = name || Object.keys(keyObj).length
+                keyObj[name] = fn
+                globalFn[key] = keyObj
+                parent.globalFn = globalFn
+            },
+            addEventListenerPjax: (ele, event, fn, option = false) => {
+              ele.addEventListener(event, fn, option)
+              utils.addGlobalFn('pjax', () => {
+                  ele.removeEventListener(event, fn, option)
+              })
+          },
+        }
+    })()</script><!-- global head--><script>const GLOBAL_CONFIG = {
+    root: '/',
+    algolia: undefined,
+    localsearch: {"preload":false,"path":"/search.xml"},
+    runtime: '2024-08-19 00:00:00',
+    lazyload: {
+        enable: false,
+        error: '/img/error_load.avif'
+    },
+    copyright: false,
+    highlight: {"limit":200,"expand":true,"copy":true,"syntax":"highlight.js"},
+    randomlink: false,
+    lang: {"theme":{"dark":"已切换至深色模式","light":"已切换至浅色模式"},"copy":{"success":"复制成功","error":"复制失败"},"backtop":"返回顶部","time":{"day":"天前","hour":"小时前","just":"刚刚","min":"分钟前","month":"个月前"},"day":" 天","f12":"开发者模式已打开，请遵循GPL协议。","totalk":"无需删除空行，直接输入评论即可","search":{"empty":"找不到你查询的内容：${query}","hit":"找到 ${hits} 条结果，用时 ${time} 毫秒","placeholder":"输入关键词快速查找","count":"共 <b>${count}</b> 条结果。"}},
+    aside: {
+        sayhello: {
+            morning: "✨ Good morning. It's a new day",
+            noon: "It's time for a midday break",
+            afternoon: "Tea time. 🍵",
+            night: "early bedtime",
+            goodnight: "Good night 😴",
+        },
+        sayhello2: ["You'll make it.","You're gonna make it.","Good luck, stranger."],
+        sayhello3: {
+            prefix: '好久不见，',
+            back: '欢迎再次回来，',
+        },
+    },
+    covercolor: {
+        enable: true
+    },
+    comment: false,
+    lightbox: 'null',
+    post_ai: false,
+    right_menu: false,
+    lure: false,
+    expire: false,
+};</script><!-- page-config head--><script id="config-diff">var PAGE_CONFIG = {
+    is_post: true,
+    is_page: false,
+    is_home: false,
+    page: '',
+    toc: true,
+    comment: false,
+    ai_text: false
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body id="body"><!-- universe--><!-- background img--><!-- loading--><!-- console--><div id="console"><div class="close-btn" onclick="sco.hideConsole()"><i class="solitude fa-solid fa-xmark"></i></div><div class="console-card-group"><div class="console-card-group-right"><div class="console-card tags" onclick="sco.hideConsole()"><div class="card-content"><div class="author-content-item-tips">标签</div><div class="author-content-item-title">寻找感兴趣的领域</div></div><div class="card-tag-cloud"><a href="/tags/%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/">实用技巧<sup>2</sup></a><a href="/tags/Hexo/">Hexo<sup>1</sup></a><a href="/tags/%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE/">外挂标签<sup>1</sup></a></div></div><div class="console-card history" onclick="sco.hideConsole()"><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/08/"><span class="card-archive-list-date">2024/08</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">3</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/07/"><span class="card-archive-list-date">2024/07</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/05/"><span class="card-archive-list-date">2024/05</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span class="card-archive-list-count-unit">篇</span></div></a></li></ul></div></div></div><div class="button-group"><div class="console-btn-item"><span class="darkmode_switchbutton" onclick="sco.switchDarkMode()" title="昼夜切换"><i class="solitude fa-solid fa-circle-half-stroke"></i></span></div><div class="console-btn-item" id="consoleHideAside"><span class="asideSwitch" onclick="sco.switchHideAside()" title="边栏显示控制"><i class="solitude fa-solid fa-mattress-pillow"></i></span></div><div class="console-btn-item" id="consoleMusic" onclick="sco.musicToggle()"><span class="music-switch" title="音乐开关"><i class="solitude fa-solid fa-compact-disc"></i></span></div></div><div class="console-mask" onclick="sco.hideConsole()"></div></div><!-- sidebar--><div id="sidebar" style="zoom: 1;"><div id="menu-mask" style="display: none;"></div><div id="sidebar-menus"><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a></div></div></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><span class="darkmode_switchbutton menu-child" onclick="sco.switchDarkMode()"><i class="solitude fa-solid fa-circle-half-stroke"></i><span>显示模式</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>文章</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  fas fa-folder-closed"></i><span>归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  fas fa-clone"></i><span>分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  fas fa-tags"></i><span>标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>友链</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/tlink/"><i class="solitude  fas fa-toolbox"></i><span>在线工具</span></a></li><li><a class="site-page child" href="/links/"><i class="solitude  fas fa-user-group"></i><span>友情链接</span></a></li><li><a class="site-page child" href="/essay/"><i class="solitude  fas fa-fire"></i><span>即可短文</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>我的</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/equipment/"><i class="solitude  fas fa-laptop"></i><span>设备</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="solitude  fas fa-toolbox"></i><span>追番</span></a></li><li><a class="site-page child" href="/cinemas/"><i class="solitude  fas fa-toolbox"></i><span>追剧</span></a></li><li><a class="site-page child" href="/music/"><i class="solitude  fas fa-music"></i><span>音乐</span></a></li><li><a class="site-page child" href="/about/"><i class="solitude fas fa-user"></i><span>关于我</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-widget card-tags card-archives card-webinfo card-allinfo"><div class="card-tag-cloud"><a href="/tags/%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/">实用技巧<sup>2</sup></a><a href="/tags/Hexo/">Hexo<sup>1</sup></a><a href="/tags/%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE/">外挂标签<sup>1</sup></a></div></div></div></div><!-- keyboard--><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav class="show" id="nav"><div id="nav-group"><div id="blog_name"><a id="site-name" href="/" title="返回博客主页"><span class="title">HSYAC</span><i class="solitude fa-solid fa-home"></i></a></div><div id="page-name-mask"><div id="page-name"><a id="page-name-text" onclick="sco.toTop()">主题内置：外挂标签</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>文章</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  fas fa-folder-closed"></i><span>归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  fas fa-clone"></i><span>分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  fas fa-tags"></i><span>标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>友链</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/tlink/"><i class="solitude  fas fa-toolbox"></i><span>在线工具</span></a></li><li><a class="site-page child" href="/links/"><i class="solitude  fas fa-user-group"></i><span>友情链接</span></a></li><li><a class="site-page child" href="/essay/"><i class="solitude  fas fa-fire"></i><span>即可短文</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>我的</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/equipment/"><i class="solitude  fas fa-laptop"></i><span>设备</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="solitude  fas fa-toolbox"></i><span>追番</span></a></li><li><a class="site-page child" href="/cinemas/"><i class="solitude  fas fa-toolbox"></i><span>追剧</span></a></li><li><a class="site-page child" href="/music/"><i class="solitude  fas fa-music"></i><span>音乐</span></a></li><li><a class="site-page child" href="/about/"><i class="solitude fas fa-user"></i><span>关于我</span></a></li></ul></div></div></div><div id="nav-left"></div><div id="nav-right"><div class="nav-button" id="travellings_button"><a class="site-page" target="_blank" rel="noopener" href="https://www.travellings.cn/go.html" title=""><i class="solitude fas fa-train"></i></a></div><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机一篇文章" href="javascript:void(0);"><i class="solitude fa-solid fa-dice-d6"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索"><i class="solitude fa-solid fa-magnifying-glass"></i></a></div><div class="nav-button" id="nav-console"><a class="console_switchbutton" onclick="sco.showConsole()" title="中控台" href="javascript:void(0);"><label><i class="left"></i><i class="center"></i><i class="right"></i></label></a></div><div class="nav-button" id="nav-totop" onclick="sco.toTop()"><a class="totopbtn"><i class="solitude fa-solid fa-arrow-up"></i><span id="percent">0</span></a></div><div id="toggle-menu"><a class="site-page"><i class="solitude fa-solid fa-bars"></i></a></div></div></div></nav><div class="coverdiv" id="coverdiv"><img class="nolazyload" id="post-cover" src="https://s3.qjqq.cn/47/66c2ad58eb9a9.png!color" alt="主题内置：外挂标签"></div><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original" title="该文章为原创文章，注意版权协议">原创</a><span class="post-meta-categories"><a class="post-meta-categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></span><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE/"><span class="tags-name tags-punctuation"><i class="solitude fa-solid fa-hashtag"></i>外挂标签</span></a></div></div></div></div><h1 class="post-title">主题内置：外挂标签</h1><div id="post-meta"><div class="meta-secondline"><span class="post-meta-date" title="发布于 2024-05-04 15:37:00"><i class="post-meta-icon solitude fa-solid fa-calendar-days"></i><time datetime="2024-05-04T07:37:00.000Z">2024-05-04T07:37:00.000Z</time></span><span class="post-meta-wordcount"><i class="post-meta-icon solitude fa-solid fa-file-word" title="文章字数"></i><span class="word-count">980</span><span class="post-meta-separator"></span><i class="post-meta-icon solitude fa-solid fa-clock" title="阅读耗时"></i><span>4 min</span></span><span class="post-meta-position" title="作者IP归属地为北京"><i class="post-meta-icon solitude fa-solid fa-map"></i><span>北京</span></span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="标签页"><a href="#标签页" class="headerlink" title="标签页"></a>标签页</h2><div class="tabs" id="标签页"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#标签页-0">语法</button></li><li class="tab"><button type="button" data-href="#标签页-1">参数</button></li><li class="tab"><button type="button" data-href="#标签页-2">预览</button></li><li class="tab"><button type="button" data-href="#标签页-3">源代码</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="标签页-0"><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% tabs [唯一名称] [索引] %&#125;</span><br><span class="line">&lt;!-- tab [标签标题] [@图标] --&gt;</span><br><span class="line">任意内容（支持内联标签）。</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="标签页-1"><ol>
+<li>[唯一名称]：每个标签块的唯一名称，不包含逗号。<ol>
+<li>它将用作每个标签的#id前缀及其索引号。</li>
+<li>如果名称中包含空格，则在生成的#id中将所有空格替换为连字符。</li>
+<li>文章&#x2F;页面的当前URL必须是唯一的！</li>
+</ol>
+</li>
+<li>[索引]：活动标签的索引号。<ol>
+<li>如果未指定，将选择第一个标签（1）。</li>
+<li>如果索引为-1，则不会选择任何标签。这将是一个剧透。</li>
+<li>可选参数。</li>
+</ol>
+</li>
+<li>[标签标题]：当前标签的标题。<ol>
+<li>如果未指定，将使用唯一名称与标签索引后缀作为标签标题。</li>
+<li>如果未指定标题但指定了图标，则标题将为空。</li>
+<li>可选参数。</li>
+</ol>
+</li>
+<li>[@图标]：图标名称（完整名称，例如 “fas fa-github”）。<ol>
+<li>可以指定带或不带空格的空格；例如，”标签标题 @图标” 类似于 “标签标题@图标”。</li>
+<li>可选参数。</li>
+</ol>
+</li>
+</ol><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="标签页-2"><blockquote>
+<p>演示1 - 默认情况下，选择第一个标签</p>
+</blockquote>
+<div class="tabs" id="演示1"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#演示1-0">test1</button></li><li class="tab"><button type="button" data-href="#演示1-1">test2</button></li><li class="tab"><button type="button" data-href="#演示1-2">test3</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="演示1-0"><p>这是标签1。</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示1-1"><p>这是标签2。</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示1-2"><p>这是标签3。</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<blockquote>
+<p>演示2 - 没有默认选择</p>
+</blockquote>
+<div class="tabs" id="演示2"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#演示2-0">演示2 0</button></li><li class="tab"><button type="button" data-href="#演示2-1">演示2 1</button></li><li class="tab"><button type="button" data-href="#演示2-2">演示2 2</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="演示2-0"><p>这是标签1。</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示2-1"><p>这是标签2。</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示2-2"><p>这是标签3。</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<blockquote>
+<p>演示3 - 自定义标签名称 + 图标 + 标签名称和图标</p>
+</blockquote>
+<div class="tabs" id="演示3"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#演示3-0">test1</button></li><li class="tab"><button type="button" data-href="#演示3-1"><i  style="text-align: center;" class="tab solitude fab fa-github"></i></button></li><li class="tab"><button type="button" data-href="#演示3-2"><i  class="tab solitude fas fa-music"></i>音乐</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="演示3-0"><p>这是标签1。</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示3-1"><p>这是标签2。</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="演示3-2"><p>这是标签3。</p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="标签页-3"><blockquote>
+<p>演示1 - 默认情况下，选择第一个标签</p>
+</blockquote>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&#123;% subtabs 演示1 %&#125;</span><br><span class="line">&lt;!-- tab test1 --&gt;</span><br><span class="line">这是标签1。</span><br><span class="line">&lt;!-- endtab--&gt;</span><br><span class="line">&lt;!-- tab test2 --&gt;</span><br><span class="line">这是标签2。</span><br><span class="line">&lt;!-- endtab--&gt;</span><br><span class="line">&lt;!-- tab test3 --&gt;</span><br><span class="line">这是标签3。</span><br><span class="line">&lt;!-- endtab--&gt;</span><br><span class="line">&#123;% endsubtabs %&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>演示2 - 没有默认选择</p>
+</blockquote>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;% subtabs 演示2 %&#125;</span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line">这是标签1。</span><br><span class="line">&lt;!-- endtab--&gt;</span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line">这是标签2。</span><br><span class="line">&lt;!-- endtab--&gt;</span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line">这是标签3。</span><br><span class="line">&lt;!-- endtab--&gt;</span><br><span class="line">&#123;% endsubtabs %&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>演示3 - 自定义标签名称 + 图标 + 标签名称和图标</p>
+</blockquote>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;% subtabs 演示3 %&#125;</span><br><span class="line">&lt;!-- tab test1  --&gt;</span><br><span class="line">这是标签1。</span><br><span class="line">&lt;!-- endtab--&gt;</span><br><span class="line">&lt;!-- tab @st-disc-fill --&gt;</span><br><span class="line">这是标签2。</span><br><span class="line">&lt;!-- endtab--&gt;</span><br><span class="line">&lt;!-- tab 音乐 @st-disc-fill --&gt;</span><br><span class="line">这是标签3。</span><br><span class="line">&lt;!-- endtab--&gt;</span><br><span class="line">&#123;% endsubtabs %&#125;</span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="mermaid"><a href="#mermaid" class="headerlink" title="mermaid"></a>mermaid</h2><blockquote>
+<p>使用 <code>mermaid</code> 标签可以创建流程图、序列图、类图、状态图、甘特图和饼图。更多详情请参考 <a target="_blank" rel="noopener" href="https://mermaid.js.org/#/">mermaid 文档</a>。<br>如果您使用 gulp，请确保关闭已使用 mermaid 的页面。更多详情请参考 <a target="_blank" rel="noopener" href="https://solitude.js.org/high-configuration/advanced#gulp">文档</a>。</p>
+</blockquote>
+<ul>
+<li>在主题配置文件中启用开关</li>
+</ul>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">mermaid:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<div class="tabs" id="mermaidchart"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#mermaidchart-0">语法</button></li><li class="tab"><button type="button" data-href="#mermaidchart-1">预览</button></li><li class="tab"><button type="button" data-href="#mermaidchart-2">源代码</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="mermaidchart-0"><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;% mermaid %&#125;</span><br><span class="line">graph TD:</span><br><span class="line"><span class="code">    A--&gt;B;</span></span><br><span class="line"><span class="code">    A--&gt;C;</span></span><br><span class="line"><span class="code">    B--&gt;D;</span></span><br><span class="line"><span class="code">    C--&gt;D;</span></span><br><span class="line"><span class="code">&#123;% endmermaid %&#125;</span></span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="mermaidchart-1"><p><img src="https://s3.qjqq.cn/47/661f416a2f175.webp!color"></p><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="mermaidchart-2"><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#123;% mermaid %&#125;</span><br><span class="line">graph TD;</span><br><span class="line"><span class="code">    A--&gt;B;</span></span><br><span class="line"><span class="code">    A--&gt;C;</span></span><br><span class="line"><span class="code">    B--&gt;D;</span></span><br><span class="line"><span class="code">    C--&gt;D;</span></span><br><span class="line"><span class="code">&#123;% endmermaid %&#125;</span></span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="照片库"><a href="#照片库" class="headerlink" title="照片库"></a>照片库</h2><div class="tabs" id="gallerygroupphotogallery"><ul class="nav-tabs"><li class="tab active"><button type="button" data-href="#gallerygroupphotogallery-0">语法</button></li><li class="tab"><button type="button" data-href="#gallerygroupphotogallery-1">预览</button></li><li class="tab"><button type="button" data-href="#gallerygroupphotogallery-2">源代码</button></li></ul><div class="tab-contents"><div class="tab-item-content active" id="gallerygroupphotogallery-0"><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;gallery-group-main&quot;</span>&gt;</span></span></span><br><span class="line">&#123;% galleryGroup 名称 描述 链接 图片URL %&#125;</span><br><span class="line">&#123;% galleryGroup 名称 描述 链接 图片URL %&#125;</span><br><span class="line">&#123;% galleryGroup 名称 描述 链接 图片URL %&#125;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="gallerygroupphotogallery-1"><div class="gallery-group-main">
+<figure class="gallery-group">
+  <img class="gallery-group-img no-lightbox" src='https://s3.qjqq.cn/47/661f408a2be39.webp!color' alt="Group Image Gallery">
+  <figcaption>
+  <div class="gallery-group-name">壁纸</div>
+  <p>一些壁纸的收藏</p>
+  <a href='/'></a>
+  </figcaption>
+  </figure>
+  
+<figure class="gallery-group">
+  <img class="gallery-group-img no-lightbox" src='https://s3.qjqq.cn/47/661f3fcd06662.webp!color' alt="Group Image Gallery">
+  <figcaption>
+  <div class="gallery-group-name">女孩</div>
+  <p>我的女孩们</p>
+  <a href='/posts/e19cb4b7.html#gallery-%E7%9B%B8%E5%86%8C'></a>
+  </figcaption>
+  </figure>
+  
+</div><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div><div class="tab-item-content" id="gallerygroupphotogallery-2"><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;gallery-group-main&quot;</span>&gt;</span></span></span><br><span class="line">&#123;% galleryGroup &#x27;壁纸&#x27; &#x27;一些壁纸的收藏&#x27; &#x27;/&#x27; https://s3.qjqq.cn/47/661f408a2be39.webp!color %&#125;</span><br><span class="line">&#123;% galleryGroup &#x27;女孩&#x27; &#x27;我的女孩们&#x27; &#x27;/posts/e19cb4b7.html#gallery-%E7%9B%B8%E5%86%8C&#x27; https://s3.qjqq.cn/47/661f3fcd06662.webp!color %&#125;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure><button type="button" class="tab-to-top" aria-label="scroll to top"><i class="solitude fas fa-arrow-up"></i></button></div></div></div>
+
+<h2 id="图库"><a href="#图库" class="headerlink" title="图库"></a>图库</h2><ol>
+<li>标签语法   <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% gallery %&#125;</span><br><span class="line">markdown 内容</span><br><span class="line">&#123;% endgallery %&#125;</span><br></pre></td></tr></table></figure></li>
+<li>预览<div class="gallery-container waterfall">
+        <div class="gallery-item"><img class="nolazyload" src=https://i.pinimg.com/originals/fd/d6/d7/fdd6d74c0be3966e5ac35d273001b3b0.gif alt="" /></div><div class="gallery-item"><img class="nolazyload" src=https://i.pinimg.com/originals/44/d5/cd/44d5cdbfd657e791f250d3e7931e10a4.webp alt="" /></div><div class="gallery-item"><img class="nolazyload" src=https://i.pinimg.com/originals/71/a1/95/71a19513d9650643470018db555f0e82.webp alt="" /></div><div class="gallery-item"><img class="nolazyload" src=https://i.pinimg.com/736x/b8/47/d3/b847d3018e86361419491d5fea2c16c0.jpg alt="" /></div><div class="gallery-item"><img class="nolazyload" src=https://i.pinimg.com/originals/b8/0a/eb/b80aebc0924b0f8068bfa00135235590.jpg alt="" /></div><div class="gallery-item"><img class="nolazyload" src=https://i.pinimg.com/originals/26/61/16/26611602f5959ef88c290858d49f905b.jpg alt="" /></div><div class="gallery-item"><img class="nolazyload" src=https://i.pinimg.com/originals/79/a3/a6/79a3a61f3f5a13fb7bf8aa9c1d684c9a.jpg alt="" /></div><div class="gallery-item"><img class="nolazyload" src=https://i.pinimg.com/originals/0c/96/7c/0c967c4af27aa805391e3be495936acd.png alt="" /></div><div class="gallery-item"><img class="nolazyload" src=https://i.pinimg.com/originals/58/13/fb/5813fbcf2bc76e91e60b6c45c11f6092.jpg alt="" /></div><div class="gallery-item"><img class="nolazyload" src=https://i.pinimg.com/originals/ca/b3/1a/cab31a378b34fb51a41e43e53cb803f0.jpg alt="" /></div><div class="gallery-item"><img class="nolazyload" src=https://i.pinimg.com/originals/ce/33/06/ce330642a29291577279ab20c8d3c6cf.jpg alt="" /></div><div class="gallery-item"><img class="nolazyload" src=https://i.pinimg.com/originals/84/08/e3/8408e387fa24fc2c6f0c6a7b9b14e0c3.png alt="" /></div>
+      </div></li>
+<li>代码<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;% gallery %&#125;</span><br><span class="line">![](<span class="link">https://s3.qjqq.cn/47/661f3f3ce9415.webp!color</span>)</span><br><span class="line">![](<span class="link">https://s3.qjqq.cn/47/661f3f76a0233.webp!color</span>)</span><br><span class="line">![](<span class="link">https://s3.qjqq.cn/47/661f3f96048cf.webp!color</span>)</span><br><span class="line">![](<span class="link">https://s3.qjqq.cn/47/661f3fb392fb9.webp!color</span>)</span><br><span class="line">![](<span class="link">https://s3.qjqq.cn/47/661f3fcd06662.webp!color</span>)</span><br><span class="line">![](<span class="link">https://s3.qjqq.cn/47/661f3fe838050.webp!color</span>)</span><br><span class="line">![](<span class="link">https://s3.qjqq.cn/47/661f4001816f0.webp!color</span>)</span><br><span class="line">![](<span class="link">https://s3.qjqq.cn/47/661f3f3ce9415.webp!color</span>)</span><br><span class="line">![](<span class="link">https://s3.qjqq.cn/47/661f3f76a0233.webp!color</span>)</span><br><span class="line">![](<span class="link">https://s3.qjqq.cn/47/661f3f96048cf.webp!color</span>)</span><br><span class="line">![](<span class="link">https://s3.qjqq.cn/47/661f3fb392fb9.webp!color</span>)</span><br><span class="line">![](<span class="link">https://s3.qjqq.cn/47/661f3fcd06662.webp!color</span>)</span><br><span class="line">![](<span class="link">https://s3.qjqq.cn/47/661f3fe838050.webp!color</span>)</span><br><span class="line">![](<span class="link">https://s3.qjqq.cn/47/661f4001816f0.webp!color</span>)</span><br><span class="line">&#123;% endgallery %&#125;</span><br></pre></td></tr></table></figure></li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author_group"><a class="post-copyright__author_img" href="/about/"><img class="post-copyright__author_img_front" src="https://s1.aigei.com/src/img/gif/a8/a8a53ff1a44441a38ca234a8638d3fd5.gif?e=1735488000&amp;token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:QziiGpBYcaq-kRheHzuGRTK6jeY="></a><div class="post-copyright__author_name">Hsyac</div><div class="post-copyright__author_desc"></div></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div id="quit-box" onclick="RemoveRewardMask()"></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本文是原创文章，采用<a href="/copyright/">CC BY-NC-SA 4.0</a>协议，完整转载请注明来自<a href="/">Hsyac</a></span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE/"><span class="tags-punctuation"><i class="solitude fa-solid fa-hashtag"></i>外挂标签<span class="tagsPageCount">1</span></span></a></div></div></div><nav class="needEndHide pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/posts/cc5eaa4b.html"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">实用技巧</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-bg-top"><div class="is-center"><div class="author-info__top-group"><div class="author-info__sayhi" id="author-info__sayhi" onclick="sco.changeSayHelloText()">sayhello.morning</div></div></div></div><a class="card-info-avatar" href="/about/" title="头像"><div class="avatar-img"><img src="https://s1.aigei.com/src/img/gif/a8/a8a53ff1a44441a38ca234a8638d3fd5.gif?e=1735488000&amp;token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:QziiGpBYcaq-kRheHzuGRTK6jeY=" alt="头像"></div></a><div class="card-info__desc_group"><div class="author-info__name">道 心</div><div class="author-info__desc"></div><div class="card-info__data is-center"><a href="/archives/" title="累计文章数:5"><div class="length-num">5</div><div class="headline">文章</div></a><a href="/tags/" title="标签总数:3"><div class="length-num">3</div><div class="headline">标签</div></a><a href="/categories/" title="分类总数:1"><div class="length-num">1</div><div class="headline">分类</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" target="_blank" rel="noopener" href="https://github.com/HSYAC" title="Github"><i class="solitude  fab fa-github"></i></a><a class="social-icon" target="_blank" rel="noopener" href="https://space.bilibili.com/3546574542080360" title="Bilibili"><i class="solitude  fab fa-bilibili"></i></a></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="solitude fa-solid fa-bars"></i><span>文章目录</span></div><div class="toc-content" id="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE%E9%A1%B5"><span class="toc-text">标签页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#mermaid"><span class="toc-text">mermaid</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%85%A7%E7%89%87%E5%BA%93"><span class="toc-text">照片库</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%BA%93"><span class="toc-text">图库</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="solitude fa-solid fa-map"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/1.html" title="Hello World"><img alt="Hello World" src="/img/default.avif"></a><div class="content"><span class="title" href="/posts/1.html" title="Hello World">Hello World</span></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/b30ef094.html" title="在Hexo中使用NOTE提示块"><img alt="在Hexo中使用NOTE提示块" src="/img/default.avif"></a><div class="content"><span class="title" href="/posts/b30ef094.html" title="在Hexo中使用NOTE提示块">在Hexo中使用NOTE提示块</span></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/9daba997.html" title="Hexo写文章基本操作"><img alt="Hexo写文章基本操作" src="https://hexo.io/themes/screenshots/landscape.png"></a><div class="content"><span class="title" href="/posts/9daba997.html" title="Hexo写文章基本操作">Hexo写文章基本操作</span><span class="article-recent_post_categories" href="/posts/9daba997.html">教程</span></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/cc5eaa4b.html" title="实用技巧"><img alt="实用技巧" src="https://s3.qjqq.cn/47/66c2af80073e7.png!color"></a><div class="content"><span class="title" href="/posts/cc5eaa4b.html" title="实用技巧">实用技巧</span><span class="article-recent_post_categories" href="/posts/cc5eaa4b.html">教程</span></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/1d2efe27.html" title="主题内置：外挂标签"><img alt="主题内置：外挂标签" src="https://s3.qjqq.cn/47/66c2ad58eb9a9.png!color"></a><div class="content"><span class="title" href="/posts/1d2efe27.html" title="主题内置：外挂标签">主题内置：外挂标签</span><span class="article-recent_post_categories" href="/posts/1d2efe27.html">教程</span></div></div></div></div></div></div></main><footer id="footer"><div id="footer_deal"><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/HSYAC" title="Github"><i class="solitude  fab fa-github"></i></a><a class="deal_link" href="mailto:2846395137@qq.com" title="Mail"><i class="solitude  fa-solid fa-envelope"></i></a><div class="nolazyload footer_mini_logo" id="footer_mini_logo" title="返回顶部" onclick="sco.toTop()"><img src="https://s1.aigei.com/src/img/gif/a8/a8a53ff1a44441a38ca234a8638d3fd5.gif?e=1735488000&amp;token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:QziiGpBYcaq-kRheHzuGRTK6jeY=" alt="返回顶部"></div><a class="deal_link" target="_blank" rel="noopener" href="https://space.bilibili.com/3546574542080360" title="Bilibili"><i class="solitude  fab fa-bilibili"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://www.douyin.com/user/MS4wLjABAAAA1RD9Z5FnuK_Y6XjC9oZzOulx8IcWVO8EXHZ61kgF_nDpn5ZhUKewg__8qfTfymXc" title="Douyin"><i class="solitude  fab fa-tiktok"></i></a></div><div id="st-footer"><div class="footer-group"><h3 class="footer-title">导航</h3><div class="footer-links"><a class="footer-item" href="/archives/" title="归档">归档</a><a class="footer-item" href="/categories/" title="分类">分类</a><a class="footer-item" href="/tags/" title="标签">标签</a></div></div><div class="footer-group"><h3 class="footer-title">协议</h3><div class="footer-links"><a class="footer-item" href="/cookies/" title="Cookies">Cookies</a><a class="footer-item" href="/privacy/" title="隐私政策">隐私政策</a><a class="footer-item" href="/copyright/" title="版权声明">版权声明</a></div></div></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div class="copyright">© 2024 By&nbsp;<a class="footer-bar-link" href="/">道 心</a></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/HSYAC" alt="Theme">Theme</a></div></div></div></footer></div><!-- right_menu--><!-- inject body--><div><script src="/js/utils.js?v=2.0.10"></script><script src="/js/main.js?v=2.0.10"></script><script src="/js/third_party/waterfall.min.js?v=2.0.10"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pjax/0.2.8/pjax.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/node-snackbar/0.1.16/snackbar.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script><script>var meting_api = 'https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r';</script><script src="https://cdn.staticfile.net/aplayer/1.10.1/APlayer.min.js"></script><script src="https://cdn.staticfile.net/meting/2.0.1/Meting.min.js"></script><script src="/js/covercolor/local.js?v=2.0.10"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js"></script><script defer pjax src="/js/custom.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script><div class="js-pjax"><script>mermaid.run();</script><script defer pjax src="https://cdnjs.cloudflare.com/ajax/libs/busuanzi/2.3.0/bsz.pure.mini.min.js"></script></div></div><!-- pjax--><script>const pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: ['title','#body-wrap','#site-config','meta[name="description"]','.js-pjax','meta[property^="og:"]','#config-diff'],
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+})
+
+document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+})
+
+document.addEventListener('pjax:complete', () => {
+    window.refreshFn()
+
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+        const newScript = document.createElement('script')
+        const content = item.text || item.textContent || item.innerHTML || ""
+        Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+        newScript.appendChild(document.createTextNode(content))
+        item.parentNode.replaceChild(newScript, item)
+    })
+
+    GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+})
+
+document.addEventListener('pjax:error', (e) => {
+    if (e.request.status === 404) {
+        pjax.loadUrl('/404.html')
+    }
+})</script><!-- theme--><script>initTheme = () => {
+    let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const cachedMode = utils.saveToLocal.get('theme');
+    if (cachedMode === undefined) {
+        const nowMode =
+            isDarkMode ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-theme', nowMode);
+    } else {
+        document.documentElement.setAttribute('data-theme', cachedMode);
+    }
+    typeof rm === 'object' && rm.mode(cachedMode === 'dark' && isDarkMode)
+}
+initTheme()</script><!-- google adsense--><!-- search--><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="solitude fa-solid fa-xmark"></i></button></nav><div class="search-wrap"><div class="search-box"><input class="search-box-input" id="search-input" type="text" autocomplete="off" spellcheck="false" autocorrect="off" autocapitalize="off" placeholder="输入关键词快速查找"></div><div id="search-results"><div id="search-hits"></div></div><div id="search-pagination"></div><div id="search-tips"></div></div></div><div id="search-mask"></div></div><script src="/js/search/local.js?v=2.0.10"></script><!-- Tianli-Talk--><!-- music--><div class="needEndHide" id="nav-music" onclick="sco.musicToggle()"><div id="nav-music-hoverTips">音乐已暂停</div><meting-js id="9699611204" server="netease" type="playlist" mutex="true" preload="none" data-lrctype="0" order="random" theme="var(--efu-main)"></meting-js></div></body></html><script>const posts=["posts/1.html","posts/b30ef094.html","posts/9daba997.html","posts/cc5eaa4b.html","posts/1d2efe27.html"];function toRandomPost(){ pjax.loadUrl(GLOBAL_CONFIG.root+posts[Math.floor(Math.random()*posts.length)]); }</script>
