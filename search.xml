@@ -4,24 +4,11 @@
   
     
     <entry>
-      <title>Hello World</title>
-      <link href="/posts/1.html"/>
-      <url>/posts/1.html</url>
-      
-        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>在Hexo中使用NOTE提示块</title>
       <link href="/posts/b30ef094.html"/>
       <url>/posts/b30ef094.html</url>
       
-        <content type="html"><![CDATA[<p>在 Hexo 中可以插入一些很酷的提示块，效果如下：</p><div class="note default no-icon"><p>一个 default 提示</p></div><div class="note primary no-icon"><p>一个 primary 提示</p></div><div class="note success no-icon"><p>一个 success 提示</p></div><div class="note info no-icon"><p>一个 info 提示</p></div><div class="note warning no-icon"><p>一个 warning 提示</p></div><div class="note danger no-icon"><p>一个 danger 提示</p></div><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;% note default %&#125;</span><br><span class="line">一个 default 提示</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note primary %&#125;</span><br><span class="line">一个 primary 提示</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note success %&#125;</span><br><span class="line">一个 success 提示</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note info %&#125;</span><br><span class="line">一个 info 提示</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note warning %&#125;</span><br><span class="line">一个 warning 提示</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note danger %&#125;</span><br><span class="line">一个 danger 提示</span><br><span class="line">&#123;% endnote %&#125;</span><br></pre></td></tr></table></figure><p>点击下方查看更全的内容</p><div class="note info no-icon"><p><a href="https://homulilly.com/post/hexo-use-note-and-tabs-block.html">在 Hexo 中使用 NOTE 提示块</a></p></div>]]></content>
+        <content type="html"><![CDATA[<p>在 Hexo 中可以插入一些很酷的提示块，效果如下：</p><div class="note default no-icon"><p>一个 default 提示</p></div><div class="note primary no-icon"><p>一个 primary 提示</p></div><div class="note success no-icon"><p>一个 success 提示</p></div><div class="note info no-icon"><p>一个 info 提示</p></div><div class="note warning no-icon"><p>一个 warning 提示</p></div><div class="note danger no-icon"><p>一个 danger 提示</p></div><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;% note default %&#125;</span><br><span class="line">一个 default 提示</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note primary %&#125;</span><br><span class="line">一个 primary 提示</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note success %&#125;</span><br><span class="line">一个 success 提示</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note info %&#125;</span><br><span class="line">一个 info 提示</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note warning %&#125;</span><br><span class="line">一个 warning 提示</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note danger %&#125;</span><br><span class="line">一个 danger 提示</span><br><span class="line">&#123;% endnote %&#125;</span><br></pre></td></tr></table></figure><p>点击下方查看更全的内容</p><div class="note info no-icon"><p><a href="https://homulilly.com/post/hexo-use-note-and-tabs-block.html">在 Hexo 中使用 NOTE 提示块</a></p></div><!-- endtab -->]]></content>
       
       
       
@@ -57,31 +44,6 @@
     
     
     <entry>
-      <title>实用技巧</title>
-      <link href="/posts/cc5eaa4b.html"/>
-      <url>/posts/cc5eaa4b.html</url>
-      
-        <content type="html"><![CDATA[<h2 id="文章置顶"><a href="#文章置顶" class="headerlink" title="文章置顶"></a>文章置顶</h2><p>在新文章的 <code>Front-matter</code> 中添加 <code>sticky: 1</code>，其中较高的数字表示较高的置顶优先级。</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Solitude: 实用技巧</span><br><span class="line">date: 2024-07-04 00:00:00</span><br><span class="line">description: 收集一些使用 Solitude 的实用技巧。</span><br><span class="line">recommend: true</span><br><span class="line">tags:</span><br><span class="line"><span class="bullet">  -</span> 网站建设</span><br><span class="line">categories:</span><br><span class="line"><span class="bullet">  -</span> Solitude</span><br><span class="line"><span class="section">sticky: 1</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure><h2 id="文章封面尺寸"><a href="#文章封面尺寸" class="headerlink" title="文章封面尺寸"></a>文章封面尺寸</h2><p>根据 Heo 的设计，使用尺寸为 <code>508x225</code> 的文章封面。</p><h2 id="使用-Qingjia-的-Busuanzi"><a href="#使用-Qingjia-的-Busuanzi" class="headerlink" title="使用 Qingjia 的 Busuanzi"></a>使用 Qingjia 的 Busuanzi</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">busuanzi:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">busuanzi_use:</span> <span class="number">1</span> <span class="comment"># 0: 原版 / 1: Qingjia（其他：其他自定义 busuanzi 平台）</span></span><br><span class="line"><span class="attr">CDN:</span></span><br><span class="line">  <span class="attr">option:</span></span><br><span class="line">    <span class="attr">busuanzi_qj_js:</span> <span class="string">https://pv.lemonso.com/js</span></span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      <categories>
-          
-          <category> 教程 </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> 实用技巧 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>主题内置：外挂标签</title>
       <link href="/posts/1d2efe27.html"/>
       <url>/posts/1d2efe27.html</url>
@@ -99,6 +61,44 @@
         <tags>
             
             <tag> 外挂标签 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/posts/1.html"/>
+      <url>/posts/1.html</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>实用技巧</title>
+      <link href="/posts/cc5eaa4b.html"/>
+      <url>/posts/cc5eaa4b.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="文章置顶"><a href="#文章置顶" class="headerlink" title="文章置顶"></a>文章置顶</h2><p>在新文章的 <code>Front-matter</code> 中添加 <code>sticky: 1</code>，其中较高的数字表示较高的置顶优先级。</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Solitude: 实用技巧</span><br><span class="line">date: 2024-07-04 00:00:00</span><br><span class="line">description: 收集一些使用 Solitude 的实用技巧。</span><br><span class="line">recommend: true</span><br><span class="line">tags:</span><br><span class="line"><span class="bullet">  -</span> 网站建设</span><br><span class="line">categories:</span><br><span class="line"><span class="bullet">  -</span> Solitude</span><br><span class="line"><span class="section">sticky: 1</span></span><br><span class="line"><span class="section">---</span></span><br></pre></td></tr></table></figure><h2 id="文章封面尺寸"><a href="#文章封面尺寸" class="headerlink" title="文章封面尺寸"></a>文章封面尺寸</h2><p>根据 Heo 的设计，使用尺寸为 <code>508x225</code> 的文章封面。</p><h2 id="使用-Qingjia-的-Busuanzi"><a href="#使用-Qingjia-的-Busuanzi" class="headerlink" title="使用 Qingjia 的 Busuanzi"></a>使用 Qingjia 的 Busuanzi</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">busuanzi:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">busuanzi_use:</span> <span class="number">1</span> <span class="comment"># 0: 原版 / 1: Qingjia（其他：其他自定义 busuanzi 平台）</span></span><br><span class="line"><span class="attr">CDN:</span></span><br><span class="line">  <span class="attr">option:</span></span><br><span class="line">    <span class="attr">busuanzi_qj_js:</span> <span class="string">https://pv.lemonso.com/js</span></span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 实用技巧 </tag>
             
         </tags>
       
