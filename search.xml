@@ -4,19 +4,6 @@
   
     
     <entry>
-      <title>在Hexo中使用NOTE提示块</title>
-      <link href="/posts/b30ef094.html"/>
-      <url>/posts/b30ef094.html</url>
-      
-        <content type="html"><![CDATA[<p>在 Hexo 中可以插入一些很酷的提示块，效果如下：</p><div class="note default no-icon"><p>一个 default 提示</p></div><div class="note primary no-icon"><p>一个 primary 提示</p></div><div class="note success no-icon"><p>一个 success 提示</p></div><div class="note info no-icon"><p>一个 info 提示</p></div><div class="note warning no-icon"><p>一个 warning 提示</p></div><div class="note danger no-icon"><p>一个 danger 提示</p></div><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;% note default %&#125;</span><br><span class="line">一个 default 提示</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note primary %&#125;</span><br><span class="line">一个 primary 提示</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note success %&#125;</span><br><span class="line">一个 success 提示</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note info %&#125;</span><br><span class="line">一个 info 提示</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note warning %&#125;</span><br><span class="line">一个 warning 提示</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note danger %&#125;</span><br><span class="line">一个 danger 提示</span><br><span class="line">&#123;% endnote %&#125;</span><br></pre></td></tr></table></figure><p>点击下方查看更全的内容</p><div class="note info no-icon"><p><a href="https://homulilly.com/post/hexo-use-note-and-tabs-block.html">在 Hexo 中使用 NOTE 提示块</a></p></div><!-- endtab -->]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Hexo写文章基本操作</title>
       <link href="/posts/9daba997.html"/>
       <url>/posts/9daba997.html</url>
