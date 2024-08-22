@@ -1,0 +1,263 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>作品推荐卡片—标签外挂 | Hsyac</title><noscript>开启JavaScript才能访问本站哦~</noscript><link rel="icon" href="/img/pwa/favicon.ico"><!-- index.css--><link rel="stylesheet" href="/css/index.css?v=2.0.10"><!-- inject head--><link rel="canonical" href="http://example.com/posts/2236543.html"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"><!-- aplayer--><link rel="stylesheet" href="https://cdn.staticfile.net/aplayer/1.10.1/APlayer.min.css"><!-- swiper--><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css"><!-- fancybox ui--><!-- katex--><!-- Open Graph--><meta name="description" content="前言看到很多博客都有追番、豆瓣之类的页面，我也手痒想搞一个，不过我又不是很喜欢豆瓣的那个插件。 一是豆瓣作品限制大自由度不高。二是样式也不是很满意，修改的话也很费时间。然后我就想到写一个标签外挂来实现这个效果。趁昨天下午休息的时间完成了大部分功能（包括 藏宝阁 页面，毕竟写标签外挂就是为了这个页面服"><!-- pwa--><meta name="apple-mobile-web-app-capable" content="Hsyac"><meta name="theme-color" content="var(--efu-main)"><meta name="apple-mobile-web-app-status-bar-style" content="var(--efu-main)"><link rel="bookmark" href="/img/pwa/favicon.ico"><link rel="apple-touch-icon" href="/img/pwa/favicon.ico" sizes="180x180"><script>console.log(' %c Solitude %c ' + '2.0.10' + ' %c https://github.com/everfu/hexo-theme-solitude',
+    'background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
+    'background:#ff9a9a ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
+    'background:unset ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff')
+</script><script>let mdate = "";
+mdate = (mdate.split(","));
+let ndate = new Date();
+for (let i of mdate) {
+    if (i === (ndate.getMonth()+1) + "-" + (ndate.getDate())) {
+        document.documentElement.classList.add('memorial');
+    }
+}
+</script><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.css" /><script>(()=>{
+        const saveToLocal = {
+            set: function setWithExpiry(key, value, ttl) {
+                if (ttl === 0)
+                    return
+                const now = new Date()
+                const expiryDay = ttl * 86400000
+                const item = {
+                    value: value,
+                    expiry: now.getTime() + expiryDay
+                }
+                localStorage.setItem(key, JSON.stringify(item))
+            },
+            get: function getWithExpiry(key) {
+                const itemStr = localStorage.getItem(key)
+
+                if (!itemStr) {
+                    return undefined
+                }
+                const item = JSON.parse(itemStr)
+                const now = new Date()
+
+                if (now.getTime() > item.expiry) {
+                    localStorage.removeItem(key)
+                    return undefined
+                }
+                return item.value
+            }
+        };
+        window.utils = {
+            saveToLocal: saveToLocal,
+            getCSS: (url, id = false) => new Promise((resolve, reject) => {
+              const link = document.createElement('link')
+              link.rel = 'stylesheet'
+              link.href = url
+              if (id) link.id = id
+              link.onerror = reject
+              link.onload = link.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                link.onload = link.onreadystatechange = null
+                resolve()
+              }
+              document.head.appendChild(link)
+            }),
+            getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+              const script = document.createElement('script')
+              script.src = url
+              script.async = true
+              script.onerror = reject
+              script.onload = script.onreadystatechange = function() {
+                const loadState = this.readyState
+                if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+                script.onload = script.onreadystatechange = null
+                resolve()
+              }
+
+              Object.keys(attr).forEach(key => {
+                script.setAttribute(key, attr[key])
+              })
+
+              document.head.appendChild(script)
+            }),
+            addGlobalFn: (key, fn, name = false, parent = window) => {
+                const globalFn = parent.globalFn || {}
+                const keyObj = globalFn[key] || {}
+
+                if (name && keyObj[name]) return
+
+                name = name || Object.keys(keyObj).length
+                keyObj[name] = fn
+                globalFn[key] = keyObj
+                parent.globalFn = globalFn
+            },
+            addEventListenerPjax: (ele, event, fn, option = false) => {
+              ele.addEventListener(event, fn, option)
+              utils.addGlobalFn('pjax', () => {
+                  ele.removeEventListener(event, fn, option)
+              })
+          },
+        }
+    })()</script><!-- global head--><script>const GLOBAL_CONFIG = {
+    root: '/',
+    algolia: undefined,
+    localsearch: {"preload":false,"path":"/search.xml"},
+    runtime: '2024-08-19 00:00:00',
+    lazyload: {
+        enable: false,
+        error: '/img/error_load.avif'
+    },
+    copyright: false,
+    highlight: {"limit":200,"expand":true,"copy":true,"syntax":"highlight.js"},
+    randomlink: false,
+    lang: {"theme":{"dark":"已切换至深色模式","light":"已切换至浅色模式"},"copy":{"success":"复制成功","error":"复制失败"},"backtop":"返回顶部","time":{"day":"天前","hour":"小时前","just":"刚刚","min":"分钟前","month":"个月前"},"day":" 天","f12":"开发者模式已打开，请遵循GPL协议。","totalk":"无需删除空行，直接输入评论即可","search":{"empty":"找不到你查询的内容：${query}","hit":"找到 ${hits} 条结果，用时 ${time} 毫秒","placeholder":"输入关键词快速查找","count":"共 <b>${count}</b> 条结果。"}},
+    aside: {
+        sayhello: {
+            morning: "✨ Good morning. It's a new day",
+            noon: "It's time for a midday break",
+            afternoon: "Tea time. 🍵",
+            night: "early bedtime",
+            goodnight: "Good night 😴",
+        },
+        sayhello2: ["You'll make it.","You're gonna make it.","Good luck, stranger."],
+        sayhello3: {
+            prefix: '好久不见，',
+            back: '欢迎再次回来，',
+        },
+    },
+    covercolor: {
+        enable: true
+    },
+    comment: false,
+    lightbox: 'null',
+    post_ai: false,
+    right_menu: false,
+    lure: false,
+    expire: false,
+};</script><!-- page-config head--><script id="config-diff">var PAGE_CONFIG = {
+    is_post: true,
+    is_page: false,
+    is_home: false,
+    page: '',
+    toc: true,
+    comment: false,
+    ai_text: false
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body id="body"><!-- universe--><!-- background img--><!-- loading--><!-- console--><div id="console"><div class="close-btn" onclick="sco.hideConsole()"><i class="solitude fa-solid fa-xmark"></i></div><div class="console-card-group"><div class="console-card-group-right"><div class="console-card tags" onclick="sco.hideConsole()"><div class="card-content"><div class="author-content-item-tips">标签</div><div class="author-content-item-title">寻找感兴趣的领域</div></div><div class="card-tag-cloud"><a href="/tags/%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/">实用技巧<sup>2</sup></a><a href="/tags/%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE/">外挂标签<sup>1</sup></a><a href="/tags/Hexo/">Hexo<sup>1</sup></a></div></div><div class="console-card history" onclick="sco.hideConsole()"><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/08/"><span class="card-archive-list-date">2024/08</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">4</span><span class="card-archive-list-count-unit">篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/07/"><span class="card-archive-list-date">2024/07</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span class="card-archive-list-count-unit">篇</span></div></a></li></ul></div></div></div><div class="button-group"><div class="console-btn-item"><span class="darkmode_switchbutton" onclick="sco.switchDarkMode()" title="昼夜切换"><i class="solitude fa-solid fa-circle-half-stroke"></i></span></div><div class="console-btn-item" id="consoleHideAside"><span class="asideSwitch" onclick="sco.switchHideAside()" title="边栏显示控制"><i class="solitude fa-solid fa-mattress-pillow"></i></span></div><div class="console-btn-item" id="consoleMusic" onclick="sco.musicToggle()"><span class="music-switch" title="音乐开关"><i class="solitude fa-solid fa-compact-disc"></i></span></div></div><div class="console-mask" onclick="sco.hideConsole()"></div></div><!-- sidebar--><div id="sidebar" style="zoom: 1;"><div id="menu-mask" style="display: none;"></div><div id="sidebar-menus"><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">1</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a></div></div></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><span class="darkmode_switchbutton menu-child" onclick="sco.switchDarkMode()"><i class="solitude fa-solid fa-circle-half-stroke"></i><span>显示模式</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>文章</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  fas fa-folder-closed"></i><span>归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  fas fa-clone"></i><span>分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  fas fa-tags"></i><span>标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>友链</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/tlink/"><i class="solitude  fas fa-toolbox"></i><span>在线工具</span></a></li><li><a class="site-page child" href="/links/"><i class="solitude  fas fa-user-group"></i><span>友情链接</span></a></li><li><a class="site-page child" href="/essay/"><i class="solitude  fas fa-fire"></i><span>即可短文</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>我的</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/equipment/"><i class="solitude  fas fa-laptop"></i><span>设备</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="solitude  fas fa-toolbox"></i><span>追番</span></a></li><li><a class="site-page child" href="/cinemas/"><i class="solitude  fas fa-toolbox"></i><span>追剧</span></a></li><li><a class="site-page child" href="/music/"><i class="solitude  fas fa-music"></i><span>音乐</span></a></li><li><a class="site-page child" href="/about/"><i class="solitude fas fa-user"></i><span>关于我</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-widget card-tags card-archives card-webinfo card-allinfo"><div class="card-tag-cloud"><a href="/tags/%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/">实用技巧<sup>2</sup></a><a href="/tags/%E5%A4%96%E6%8C%82%E6%A0%87%E7%AD%BE/">外挂标签<sup>1</sup></a><a href="/tags/Hexo/">Hexo<sup>1</sup></a></div></div></div></div><!-- keyboard--><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav class="show" id="nav"><div id="nav-group"><div id="blog_name"><a id="site-name" href="/" title="返回博客主页"><span class="title">HSYAC</span><i class="solitude fa-solid fa-home"></i></a></div><div id="page-name-mask"><div id="page-name"><a id="page-name-text" onclick="sco.toTop()">作品推荐卡片—标签外挂</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>文章</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  fas fa-folder-closed"></i><span>归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  fas fa-clone"></i><span>分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  fas fa-tags"></i><span>标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>友链</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/tlink/"><i class="solitude  fas fa-toolbox"></i><span>在线工具</span></a></li><li><a class="site-page child" href="/links/"><i class="solitude  fas fa-user-group"></i><span>友情链接</span></a></li><li><a class="site-page child" href="/essay/"><i class="solitude  fas fa-fire"></i><span>即可短文</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>我的</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/equipment/"><i class="solitude  fas fa-laptop"></i><span>设备</span></a></li><li><a class="site-page child" href="/bangumis/"><i class="solitude  fas fa-toolbox"></i><span>追番</span></a></li><li><a class="site-page child" href="/cinemas/"><i class="solitude  fas fa-toolbox"></i><span>追剧</span></a></li><li><a class="site-page child" href="/music/"><i class="solitude  fas fa-music"></i><span>音乐</span></a></li><li><a class="site-page child" href="/about/"><i class="solitude fas fa-user"></i><span>关于我</span></a></li></ul></div></div></div><div id="nav-left"></div><div id="nav-right"><div class="nav-button" id="travellings_button"><a class="site-page" target="_blank" rel="noopener" href="https://www.travellings.cn/go.html" title=""><i class="solitude fas fa-train"></i></a></div><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机一篇文章" href="javascript:void(0);"><i class="solitude fa-solid fa-dice-d6"></i></a></div><div class="nav-button" id="search-button"><a class="site-page social-icon search" href="javascript:void(0);" title="搜索"><i class="solitude fa-solid fa-magnifying-glass"></i></a></div><div class="nav-button" id="nav-console"><a class="console_switchbutton" onclick="sco.showConsole()" title="中控台" href="javascript:void(0);"><label><i class="left"></i><i class="center"></i><i class="right"></i></label></a></div><div class="nav-button" id="nav-totop" onclick="sco.toTop()"><a class="totopbtn"><i class="solitude fa-solid fa-arrow-up"></i><span id="percent">0</span></a></div><div id="toggle-menu"><a class="site-page"><i class="solitude fa-solid fa-bars"></i></a></div></div></div></nav><div class="coverdiv" id="coverdiv"><img class="nolazyload" id="post-cover" src="/img/fm/wallhaven-zy5k5y.webp" alt="作品推荐卡片—标签外挂"></div><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original" title="该文章为转载或翻译文章，注意版权协议">转载或翻译</a><div class="tag_share"><div class="post-meta__tag-list"></div></div></div></div><h1 class="post-title">作品推荐卡片—标签外挂</h1><div id="post-meta"><div class="meta-secondline"><span class="post-meta-date" title="发布于 2024-08-22 21:44:19"><i class="post-meta-icon solitude fa-solid fa-calendar-days"></i><time datetime="2024-08-22T13:44:19.000Z">2024-08-22T13:44:19.000Z</time></span><span class="post-meta-date" title="最后更新于 2024-08-22 23:05:46"><i class="post-meta-icon solitude fa-solid fa-arrow-rotate-right"></i><time datetime="2024-08-22T15:05:46.642Z">2024-08-22T15:05:46.642Z</time></span><span class="post-meta-wordcount"><i class="post-meta-icon solitude fa-solid fa-file-word" title="文章字数"></i><span class="word-count">1.4k</span><span class="post-meta-separator"></span><i class="post-meta-icon solitude fa-solid fa-clock" title="阅读耗时"></i><span>6 min</span></span><span class="post-meta-position" title="作者IP归属地为china"><i class="post-meta-icon solitude fa-solid fa-map"></i><span>china</span></span><a class="post-meta-pv" href="/posts/2236543.html" title="文章热度"><i class="post-meta-icon solitude fa-solid fa-fire-flame-curved"></i><span id="busuanzi_value_page_pv"><i class="solitude fa-solid fa-spinner"></i></span></a></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>看到很多博客都有追番、豆瓣之类的页面，我也手痒想搞一个，不过我又不是很喜欢豆瓣的那个插件。</p>
+<p>一是豆瓣作品限制大自由度不高。<br>二是样式也不是很满意，修改的话也很费时间。<br>然后我就想到写一个标签外挂来实现这个效果。<br>趁昨天下午休息的时间完成了大部分功能（包括 藏宝阁 页面，毕竟写标签外挂就是为了这个页面服务的），今天进行了一些完善并发布此教程。</p>
+<p>#标签外挂的优点：</p>
+<p>可以在文章内使用<br>可以自由填写内容<br>可以多个合在一起组成一个页面</p>
+<h1 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h1><h1 id="需要一个个添加"><a href="#需要一个个添加" class="headerlink" title="- 需要一个个添加"></a>- 需要一个个添加</h1><h1 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h1><p>样式写的很简单，因为我实在是不知道放什么了。</p>
+<div title="诡秘之主" referrerPolicy="no-referrer" class="card_box" style="background-image: url(https://bookcover.yuewen.com/qdbimg/349573/1010868264/300); width:200px; height:275px;">
+    <div class="card_mask">
+      <span>此作品博主暂未作出评价</span>
+      <a target="_blank" rel="noopener" href="https://book.qidian.com/info/1010868264/">查看详情</a>
+    </div>
+    <div class="card_top">
+      <i class=""></i>
+      <span></span>
+    </div>
+    <div class="card_content">
+      <span>诡秘之主</span>
+      <div><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></div>
+    </div>
+  </div>
+<h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><p>card.js<br>在 \themes\solitude\scripts\ 路劲下创造文件夹tag在文件夹里新建 card.js 并粘贴如下代码：<br>solitude是主题名称文件夹根据自身情况选择</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * card</span><br><span class="line"> * &#123;% card name,url,bg,star,text,icon,tag,w,h %&#125;</span><br><span class="line"> * &#123;% card 标题,链接,背景,评分,评价,图标,标签,宽度,高度 %&#125;</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">&#x27;use strict&#x27;</span><br><span class="line"></span><br><span class="line">// 分数转成星星</span><br><span class="line">function tostar(num) &#123;</span><br><span class="line">    let tmp = &#x27;&#x27;</span><br><span class="line">    for (let i = 0; i &lt; Math.floor(num); i++) &#123; tmp += &#x27;&lt;i class=&quot;fa-solid fa-star&quot;&gt;&lt;/i&gt;&#x27; &#125; // 整数部分加实心星星</span><br><span class="line">    if (num - Math.floor(num) != 0) tmp += &#x27;&lt;i class=&quot;fa-solid fa-star-half-alt&quot;&gt;&lt;/i&gt;&#x27; // 小数部分转成半星</span><br><span class="line">    for (let i = 0; i &lt; 5 - Math.ceil(num); i++) &#123; tmp += &#x27;&lt;i class=&quot;fa-regular fa-star&quot;&gt;&lt;/i&gt;&#x27; &#125; // 不够5个补空心星星</span><br><span class="line">    return tmp</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function card(args) &#123;</span><br><span class="line">    args = args.join(&#x27; &#x27;).split(&#x27;,&#x27;)</span><br><span class="line"></span><br><span class="line">    // 获取参数</span><br><span class="line">    let name = (args[0] || &#x27;未知&#x27;).trim()</span><br><span class="line">    let url = (args[1] || &#x27;&#x27;).trim()</span><br><span class="line">    let bg = (args[2] ? `background-image: url($&#123;args[2]&#125;);` : &#x27;background-color: #333;&#x27;).trim()</span><br><span class="line">    let star = tostar(Number(args[3]) || 0)</span><br><span class="line">    let text = (args[4] || &#x27;此作品博主暂未作出评价&#x27;).trim()</span><br><span class="line">    let icon = (args[5] || &#x27;&#x27;).trim()</span><br><span class="line">    let tag = (args[6] || &#x27;&#x27;).trim()</span><br><span class="line">    let w = args[7] || &#x27;200px&#x27;</span><br><span class="line">    let h = args[8] || &#x27;275px&#x27;</span><br><span class="line"></span><br><span class="line">    return `&lt;div title=&quot;$&#123;name&#125;&quot; referrerPolicy=&quot;no-referrer&quot; class=&quot;card_box&quot; style=&quot;$&#123;bg&#125; width:$&#123;w&#125;; height:$&#123;h&#125;;&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;card_mask&quot;&gt;</span><br><span class="line">      &lt;span&gt;$&#123;text&#125;&lt;/span&gt;</span><br><span class="line">      $&#123;url?&#x27;&lt;a href=&quot;&#x27;+url+&#x27;&quot;&gt;查看详情&lt;/a&gt;&#x27;:&#x27;&#x27;&#125;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;card_top&quot;&gt;</span><br><span class="line">      &lt;i class=&quot;$&#123;icon&#125;&quot;&gt;&lt;/i&gt;</span><br><span class="line">      &lt;span&gt;$&#123;tag&#125;&lt;/span&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;card_content&quot;&gt;</span><br><span class="line">      &lt;span&gt;$&#123;name&#125;&lt;/span&gt;</span><br><span class="line">      &lt;div&gt;$&#123;star&#125;&lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;`</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">hexo.extend.tag.register(&#x27;card&#x27;, card, &#123; ends: false &#125;)</span><br></pre></td></tr></table></figure>
+<h2 id="在-themes-butterfly-source-css-tags-文件夹下面新建-card-styl-并粘贴如下代码："><a href="#在-themes-butterfly-source-css-tags-文件夹下面新建-card-styl-并粘贴如下代码：" class="headerlink" title="在 \themes\butterfly\source\css_tags 文件夹下面新建 card.styl 并粘贴如下代码："></a>在 \themes\butterfly\source\css_tags 文件夹下面新建 card.styl 并粘贴如下代码：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line">.card_box</span><br><span class="line">  display: flex</span><br><span class="line">  justify-content: space-between</span><br><span class="line">  flex-direction: column</span><br><span class="line">  background-position: center</span><br><span class="line">  background-size: cover</span><br><span class="line">  border-radius: 12px</span><br><span class="line">  position: relative</span><br><span class="line">  overflow: hidden</span><br><span class="line">  padding: 10px</span><br><span class="line">  color: #fff !important</span><br><span class="line">  margin: 10px auto</span><br><span class="line">  &amp;::after</span><br><span class="line">    content: &#x27;&#x27;</span><br><span class="line">    position: absolute</span><br><span class="line">    height: 100%</span><br><span class="line">    width: 100%</span><br><span class="line">    left: 0</span><br><span class="line">    top: 0</span><br><span class="line">    background: rgba(0,0,0,0.1)</span><br><span class="line">    transition: .5s</span><br><span class="line">    z-index: 0</span><br><span class="line">  &amp;:hover</span><br><span class="line">    .card_mask</span><br><span class="line">      opacity: 1</span><br><span class="line">      pointer-events: auto</span><br><span class="line">  .card_top</span><br><span class="line">    display: flex</span><br><span class="line">    z-index: 1</span><br><span class="line">    align-items: center</span><br><span class="line">    justify-content: space-between</span><br><span class="line">  .card_mask</span><br><span class="line">    position: absolute</span><br><span class="line">    pointer-events: none</span><br><span class="line">    z-index: 2</span><br><span class="line">    transition: .5s</span><br><span class="line">    opacity: 0</span><br><span class="line">    width: 100%</span><br><span class="line">    height: 100%</span><br><span class="line">    left: 0</span><br><span class="line">    top: 0</span><br><span class="line">    padding: 20px</span><br><span class="line">    background: #333</span><br><span class="line">    span</span><br><span class="line">      display: block</span><br><span class="line">      height: calc(100% - 40px)</span><br><span class="line">      overflow: auto</span><br><span class="line">    a</span><br><span class="line">      text-align: center</span><br><span class="line">      background: #fff</span><br><span class="line">      color: #333 !important</span><br><span class="line">      border-radius: 5px</span><br><span class="line">      position: absolute</span><br><span class="line">      width: calc(100% - 40px)</span><br><span class="line">      bottom: 20px</span><br><span class="line">      left: 20px</span><br><span class="line">      &amp;:hover</span><br><span class="line">        text-decoration: none !important</span><br><span class="line">        color: white !important</span><br><span class="line">        background: #49b1f5</span><br><span class="line"></span><br><span class="line">  .card_content</span><br><span class="line">    z-index: 1</span><br><span class="line">    span</span><br><span class="line">      font-size: 18px</span><br><span class="line">      font-weight: bold</span><br><span class="line"></span><br><span class="line">[data-theme=&#x27;dark&#x27;]</span><br><span class="line">  .card_box</span><br><span class="line">    color: #ddd !important</span><br><span class="line">    &amp;::after</span><br><span class="line">      background: rgba(0,0,0,0.4)</span><br><span class="line">      </span><br></pre></td></tr></table></figure>
+<h1 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h1><h1 id="注意：内容不能有英文逗号，不然会出bug"><a href="#注意：内容不能有英文逗号，不然会出bug" class="headerlink" title="注意：内容不能有英文逗号，不然会出bug"></a>注意：内容不能有英文逗号，不然会出bug</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 使用js是为了高亮代码，不必在意 --&gt;</span><br><span class="line">&lt;!-- 参数如下： --&gt;</span><br><span class="line">&#123;% card 标题,链接,背景,评分,评价,图标,标签,宽度,高度 %&#125;</span><br><span class="line">&lt;!-- 示例如下： --&gt;</span><br><span class="line">&#123;% card 诡秘之主,https://book.qidian.com/info/1010868264/,https://bookcover.yuewen.com/qdbimg/349573/1010868264/300,4.5,第一次接触这种西方文学小说，刚开始感觉看不懂，断断续续看了很多次。后来越看越觉好看，每次看甚至都需要查“文档”,fa-solid fa-book-open,小说 %&#125;</span><br><span class="line">&lt;!-- 你也可以什么都不填，将会全部使用默认值，如下： --&gt;</span><br><span class="line">&#123;% card %&#125;</span><br><span class="line">&lt;!-- 你也可以省略部分内容，如下： --&gt;</span><br><span class="line">&#123;% card 诡秘之主,https://book.qidian.com/info/1010868264/,https://bookcover.yuewen.com/qdbimg/349573/1010868264/300 %&#125;</span><br><span class="line">&lt;!-- 位置在后面的参数不填的话可以直接省略，但是如果中间的不想填必须留空，如下： --&gt;</span><br><span class="line">&#123;% card 诡秘之主,,,,,fa-solid fa-book-open,小说 %&#125;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="center">描述</th>
+<th align="right">默认值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">标题</td>
+<td align="center">作品的名字</td>
+<td align="right">未知</td>
+</tr>
+<tr>
+<td align="left">链接</td>
+<td align="center">作品的详情页，填写后会显示查看详情按钮</td>
+<td align="right">无</td>
+</tr>
+<tr>
+<td align="left">背景</td>
+<td align="center">背景 图片Url（必须是图片，想要实现颜色可自行更改代码）</td>
+<td align="right">纯色#333</td>
+</tr>
+<tr>
+<td align="left">评分</td>
+<td align="center">范围 0-5，可以是小数，如3.5和3.1表示三星半，图标只有半星的）</td>
+<td align="right">0</td>
+</tr>
+<tr>
+<td align="left">评价</td>
+<td align="center">点评内容</td>
+<td align="right">此作品博主暂未作出评价</td>
+</tr>
+<tr>
+<td align="left">图标</td>
+<td align="center">左上角图标，请填写fontawsome图标</td>
+<td align="right">无</td>
+</tr>
+<tr>
+<td align="left">标签</td>
+<td align="center">右上角标签</td>
+<td align="right">无</td>
+</tr>
+<tr>
+<td align="left">宽度</td>
+<td align="center">卡片宽度，需要填单位，如：100px 或 10rem</td>
+<td align="right">220px</td>
+</tr>
+<tr>
+<td align="left">高度</td>
+<td align="center">卡片高度，要求同上</td>
+<td align="right">300px</td>
+</tr>
+</tbody></table>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><h3 id="各位可以根据自身需求在此基础上进行完善，如果设计出了更好看的ui记得喊喊我，我真的想不出怎么美化了。有其他问题评论即可，看到之后会回信。"><a href="#各位可以根据自身需求在此基础上进行完善，如果设计出了更好看的ui记得喊喊我，我真的想不出怎么美化了。有其他问题评论即可，看到之后会回信。" class="headerlink" title="各位可以根据自身需求在此基础上进行完善，如果设计出了更好看的ui记得喊喊我，我真的想不出怎么美化了。有其他问题评论即可，看到之后会回信。"></a>各位可以根据自身需求在此基础上进行完善，如果设计出了更好看的ui记得喊喊我，我真的想不出怎么美化了。有其他问题评论即可，看到之后会回信。</h3><p>文章作者: Leonus<br>文章链接: <a target="_blank" rel="noopener" href="https://blog.leonus.cn/2022/butterflyTag.html">https://blog.leonus.cn/2022/butterflyTag.html</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author_group"><a class="post-copyright__author_img" href="/about/"><img class="post-copyright__author_img_front" src="https://s1.aigei.com/src/img/gif/a8/a8a53ff1a44441a38ca234a8638d3fd5.gif?e=1735488000&amp;token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:QziiGpBYcaq-kRheHzuGRTK6jeY="></a><div class="post-copyright__author_name">Hsyac</div><div class="post-copyright__author_desc"></div></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div id="quit-box" onclick="RemoveRewardMask()"></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本文是转载或翻译文章，版权归原作者所有。转载本文请联系原作者。</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__tag-list"></div></div></div><nav class="needEndHide pagination-post" id="pagination"><div class="next-post pull-full"><a href="/posts/9daba997.html"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Hexo写文章基本操作</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-bg-top"><div class="is-center"><div class="author-info__top-group"><div class="author-info__sayhi" id="author-info__sayhi" onclick="sco.changeSayHelloText()">sayhello.morning</div></div></div></div><a class="card-info-avatar" href="/about/" title="头像"><div class="avatar-img"><img src="https://s1.aigei.com/src/img/gif/a8/a8a53ff1a44441a38ca234a8638d3fd5.gif?e=1735488000&amp;token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:QziiGpBYcaq-kRheHzuGRTK6jeY=" alt="头像"></div></a><div class="card-info__desc_group"><div class="author-info__name">道 心</div><div class="author-info__desc"></div><div class="card-info__data is-center"><a href="/archives/" title="累计文章数:5"><div class="length-num">5</div><div class="headline">文章</div></a><a href="/tags/" title="标签总数:3"><div class="length-num">3</div><div class="headline">标签</div></a><a href="/categories/" title="分类总数:1"><div class="length-num">1</div><div class="headline">分类</div></a></div><div class="card-info-social-icons is-center"><a class="social-icon" target="_blank" rel="noopener" href="https://github.com/HSYAC" title="Github"><i class="solitude  fab fa-github"></i></a><a class="social-icon" target="_blank" rel="noopener" href="https://space.bilibili.com/3546574542080360" title="Bilibili"><i class="solitude  fab fa-bilibili"></i></a></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="solitude fa-solid fa-bars"></i><span>文章目录</span></div><div class="toc-content" id="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BC%BA%E7%82%B9%EF%BC%9A"><span class="toc-text">缺点：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9C%80%E8%A6%81%E4%B8%80%E4%B8%AA%E4%B8%AA%E6%B7%BB%E5%8A%A0"><span class="toc-text">- 需要一个个添加</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%88%E6%9E%9C"><span class="toc-text">效果</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%BA%90%E7%A0%81"><span class="toc-text">源码</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8-themes-butterfly-source-css-tags-%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E9%9D%A2%E6%96%B0%E5%BB%BA-card-styl-%E5%B9%B6%E7%B2%98%E8%B4%B4%E5%A6%82%E4%B8%8B%E4%BB%A3%E7%A0%81%EF%BC%9A"><span class="toc-text">在 \themes\butterfly\source\css_tags 文件夹下面新建 card.styl 并粘贴如下代码：</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E6%95%B0"><span class="toc-text">参数</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%EF%BC%9A%E5%86%85%E5%AE%B9%E4%B8%8D%E8%83%BD%E6%9C%89%E8%8B%B1%E6%96%87%E9%80%97%E5%8F%B7%EF%BC%8C%E4%B8%8D%E7%84%B6%E4%BC%9A%E5%87%BAbug"><span class="toc-text">注意：内容不能有英文逗号，不然会出bug</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%90%8E%E8%AE%B0"><span class="toc-text">后记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%84%E4%BD%8D%E5%8F%AF%E4%BB%A5%E6%A0%B9%E6%8D%AE%E8%87%AA%E8%BA%AB%E9%9C%80%E6%B1%82%E5%9C%A8%E6%AD%A4%E5%9F%BA%E7%A1%80%E4%B8%8A%E8%BF%9B%E8%A1%8C%E5%AE%8C%E5%96%84%EF%BC%8C%E5%A6%82%E6%9E%9C%E8%AE%BE%E8%AE%A1%E5%87%BA%E4%BA%86%E6%9B%B4%E5%A5%BD%E7%9C%8B%E7%9A%84ui%E8%AE%B0%E5%BE%97%E5%96%8A%E5%96%8A%E6%88%91%EF%BC%8C%E6%88%91%E7%9C%9F%E7%9A%84%E6%83%B3%E4%B8%8D%E5%87%BA%E6%80%8E%E4%B9%88%E7%BE%8E%E5%8C%96%E4%BA%86%E3%80%82%E6%9C%89%E5%85%B6%E4%BB%96%E9%97%AE%E9%A2%98%E8%AF%84%E8%AE%BA%E5%8D%B3%E5%8F%AF%EF%BC%8C%E7%9C%8B%E5%88%B0%E4%B9%8B%E5%90%8E%E4%BC%9A%E5%9B%9E%E4%BF%A1%E3%80%82"><span class="toc-text">各位可以根据自身需求在此基础上进行完善，如果设计出了更好看的ui记得喊喊我，我真的想不出怎么美化了。有其他问题评论即可，看到之后会回信。</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="solitude fa-solid fa-map"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/posts/2236543.html" title="作品推荐卡片—标签外挂"><img alt="作品推荐卡片—标签外挂" src="/img/fm/wallhaven-zy5k5y.webp"></a><div class="content"><span class="title" href="/posts/2236543.html" title="作品推荐卡片—标签外挂">作品推荐卡片—标签外挂</span></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/9daba997.html" title="Hexo写文章基本操作"><img alt="Hexo写文章基本操作" src="https://hexo.io/themes/screenshots/landscape.png"></a><div class="content"><span class="title" href="/posts/9daba997.html" title="Hexo写文章基本操作">Hexo写文章基本操作</span><span class="article-recent_post_categories" href="/posts/9daba997.html">教程</span></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/1d2efe27.html" title="主题内置：外挂标签"><img alt="主题内置：外挂标签" src="https://s3.qjqq.cn/47/66c2ad58eb9a9.png!color"></a><div class="content"><span class="title" href="/posts/1d2efe27.html" title="主题内置：外挂标签">主题内置：外挂标签</span><span class="article-recent_post_categories" href="/posts/1d2efe27.html">教程</span></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/1.html" title="Hello World"><img alt="Hello World" src="/img/default.avif"></a><div class="content"><span class="title" href="/posts/1.html" title="Hello World">Hello World</span></div></div><div class="aside-list-item"><a class="thumbnail" href="/posts/cc5eaa4b.html" title="实用技巧"><img alt="实用技巧" src="https://s3.qjqq.cn/47/66c2af80073e7.png!color"></a><div class="content"><span class="title" href="/posts/cc5eaa4b.html" title="实用技巧">实用技巧</span><span class="article-recent_post_categories" href="/posts/cc5eaa4b.html">教程</span></div></div></div></div></div></div></main><footer id="footer"><div id="footer_deal"><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/HSYAC" title="Github"><i class="solitude  fab fa-github"></i></a><a class="deal_link" href="mailto:2846395137@qq.com" title="Mail"><i class="solitude  fa-solid fa-envelope"></i></a><div class="nolazyload footer_mini_logo" id="footer_mini_logo" title="返回顶部" onclick="sco.toTop()"><img src="https://s1.aigei.com/src/img/gif/a8/a8a53ff1a44441a38ca234a8638d3fd5.gif?e=1735488000&amp;token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:QziiGpBYcaq-kRheHzuGRTK6jeY=" alt="返回顶部"></div><a class="deal_link" target="_blank" rel="noopener" href="https://space.bilibili.com/3546574542080360" title="Bilibili"><i class="solitude  fab fa-bilibili"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://www.douyin.com/user/MS4wLjABAAAA1RD9Z5FnuK_Y6XjC9oZzOulx8IcWVO8EXHZ61kgF_nDpn5ZhUKewg__8qfTfymXc" title="Douyin"><i class="solitude  fab fa-tiktok"></i></a></div><div id="st-footer"><div class="footer-group"><h3 class="footer-title">导航</h3><div class="footer-links"><a class="footer-item" href="/archives/" title="归档">归档</a><a class="footer-item" href="/categories/" title="分类">分类</a><a class="footer-item" href="/tags/" title="标签">标签</a></div></div><div class="footer-group"><h3 class="footer-title">协议</h3><div class="footer-links"><a class="footer-item" href="/cookies/" title="Cookies">Cookies</a><a class="footer-item" href="/privacy/" title="隐私政策">隐私政策</a><a class="footer-item" href="/copyright/" title="版权声明">版权声明</a></div></div></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div class="copyright">© 2024 By&nbsp;<a class="footer-bar-link" href="/">道 心</a></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/HSYAC" alt="Theme">Theme</a></div></div></div></footer></div><!-- right_menu--><!-- inject body--><div><script src="/js/utils.js?v=2.0.10"></script><script src="/js/main.js?v=2.0.10"></script><script src="/js/third_party/waterfall.min.js?v=2.0.10"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pjax/0.2.8/pjax.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.9.1/mermaid.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/node-snackbar/0.1.16/snackbar.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script><script>var meting_api = 'https://meting.qjqq.cn/?server=:server&type=:type&id=:id&auth=:auth&r=:r';</script><script src="https://cdn.staticfile.net/aplayer/1.10.1/APlayer.min.js"></script><script src="https://cdn.staticfile.net/meting/2.0.1/Meting.min.js"></script><script src="/js/covercolor/local.js?v=2.0.10"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js"></script><script defer pjax src="/js/custom.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script><div class="js-pjax"><script>mermaid.run();</script><script defer pjax src="https://cdnjs.cloudflare.com/ajax/libs/busuanzi/2.3.0/bsz.pure.mini.min.js"></script></div></div><!-- pjax--><script>const pjax = new Pjax({
+    elements: 'a:not([target="_blank"])',
+    selectors: ['title','#body-wrap','#site-config','meta[name="description"]','.js-pjax','meta[property^="og:"]','#config-diff'],
+    cacheBust: false,
+    analytics: false,
+    scrollRestoration: false
+})
+
+document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+})
+
+document.addEventListener('pjax:complete', () => {
+    window.refreshFn()
+
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+        const newScript = document.createElement('script')
+        const content = item.text || item.textContent || item.innerHTML || ""
+        Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+        newScript.appendChild(document.createTextNode(content))
+        item.parentNode.replaceChild(newScript, item)
+    })
+
+    GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+})
+
+document.addEventListener('pjax:error', (e) => {
+    if (e.request.status === 404) {
+        pjax.loadUrl('/404.html')
+    }
+})</script><!-- theme--><script>initTheme = () => {
+    let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const cachedMode = utils.saveToLocal.get('theme');
+    if (cachedMode === undefined) {
+        const nowMode =
+            isDarkMode ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-theme', nowMode);
+    } else {
+        document.documentElement.setAttribute('data-theme', cachedMode);
+    }
+    typeof rm === 'object' && rm.mode(cachedMode === 'dark' && isDarkMode)
+}
+initTheme()</script><!-- google adsense--><!-- search--><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><button class="search-close-button"><i class="solitude fa-solid fa-xmark"></i></button></nav><div class="search-wrap"><div class="search-box"><input class="search-box-input" id="search-input" type="text" autocomplete="off" spellcheck="false" autocorrect="off" autocapitalize="off" placeholder="输入关键词快速查找"></div><div id="search-results"><div id="search-hits"></div></div><div id="search-pagination"></div><div id="search-tips"></div></div></div><div id="search-mask"></div></div><script src="/js/search/local.js?v=2.0.10"></script><!-- Tianli-Talk--><!-- music--><div class="needEndHide" id="nav-music" onclick="sco.musicToggle()"><div id="nav-music-hoverTips">音乐已暂停</div><meting-js id="9699611204" server="netease" type="playlist" mutex="true" preload="none" data-lrctype="0" order="random" theme="var(--efu-main)"></meting-js></div></body></html><script>const posts=["posts/2236543.html","posts/9daba997.html","posts/1d2efe27.html","posts/1.html","posts/cc5eaa4b.html"];function toRandomPost(){ pjax.loadUrl(GLOBAL_CONFIG.root+posts[Math.floor(Math.random()*posts.length)]); }</script>
