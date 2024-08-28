@@ -11,6 +11,18 @@
         <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在折腾 hexo 的时候安装一些想要的 hexo 插件，有时候安装的插件会和已有的插件或者 hexo 不兼容起冲突。</p><p>然后自己在执行 hexo 命令的时候，会出现一堆报错信息。</p><h1 id="列出已安装插件"><a href="#列出已安装插件" class="headerlink" title="列出已安装插件"></a>列出已安装插件</h1><p>执行命令：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm list</span><br></pre></td></tr></table></figure><h1 id="卸载命令"><a href="#卸载命令" class="headerlink" title="卸载命令"></a>卸载命令</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall 插件名</span><br></pre></td></tr></table></figure><p>然后删除相关配置和文件</p><p>配置文件中有 PLugins 模块，删除对应的插件设置；</p><p>删除 node_modules&#x2F; 目录下对应的插件文件</p>]]></content>
       
       
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
       
     </entry>
     
